@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Todoist Peacock",
+  "description": "Adds color to the Todoist Schedule view",
+  "version": "1.0",
+  "icons": {
+    "16": "images/orange and blue peacock.png",
+    "32": "images/orange and blue peacock.png",
+    "48": "images/orange and blue peacock.png",
+    "128": "images/orange and blue peacock.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "content-script.js"
+      ],
+      "css": [
+        "peacock.css"
+      ],
+      "matches": [
+        "https://app.todoist.com/app/today"
+      ]
+    }
+  ]
+}
