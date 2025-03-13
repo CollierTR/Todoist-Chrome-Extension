@@ -11,15 +11,13 @@
   },
   "content_scripts": [
     {
-      "js": [
-        "content-script.js"
-      ],
-      "css": [
-        "peacock.css"
-      ],
-      "matches": [
-        "https://app.todoist.com/app/today"
-      ]
+      "js": ["content-script.js"],
+      "css": ["peacock.css"],
+      "matches": ["https://app.todoist.com/app/today", "https://app.todoist.com/app/upcoming"]
     }
-  ]
+  ],
+  "permissions": ["activeTab", "storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }
