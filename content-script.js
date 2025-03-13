@@ -3,7 +3,7 @@ console.log("start of script")
 
 //  class=  fc-timegrid-slot    fc-timegrid-slot-lane   fc-timegrid-slot-minor
 
-setTimeout(injectColor, 1000)
+setTimeout(injectColor, 4000)
 
 function injectColor() {
     let timeSlots = document.querySelectorAll('.fc-timegrid-slot-lane')
@@ -30,6 +30,31 @@ function injectColor() {
         }
 
     })
+
+
+const divs = document.querySelectorAll('div'); // Get all div elements
+
+divs.forEach(div => {
+  if (div.textContent.trim() === 'meeting') {
+    let parent = div;
+    
+    // Traverse up 3 levels
+    for (let i = 0; i < 2; i++) {
+      if (parent.parentElement) {
+        parent = parent.parentElement;
+      } else {
+        console.log('Less than 3 parent levels available');
+        return; // Stop if there are not enough parents
+      }
+    }
+    
+    // Add the class to the third parent
+    parent.classList.add('meeting');
+    console.log(parent.classList)
+    console.log('Added class to:', parent);
+  }
+});
+
 
 }
 
