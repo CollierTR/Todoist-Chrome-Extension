@@ -10,19 +10,19 @@ function injectColor() {
 
     timeSlots.forEach((slot, index) => {
         console.log(index)
-        if (index > 0 && index < 20 || index > 87 && index < 96) { // 1am-5am & 10pm-12pm
+        if (index > 0 && index < 24 || index > 91 && index < 96) { // 1am-5am & 10pm-12pm
             slot.classList.add('night')
         }
         if (index > 27 && index < 64) {
             slot.classList.add('work')
         }
-        if (index >= 20 && index <= 27 || index >= 64 && index <= 67) {
+        if (index >= 24 && index <= 27 || index >= 64 && index <= 67) {
             slot.classList.add('golden-hour')
         }
         if (index >= 68 && index <= 75) {
             slot.classList.add('family-time')
         }
-        if (index >= 76 && index <= 87) {
+        if (index >= 76 && index <= 91) {
             slot.classList.add('cyber-focus')
         }
         if ((index + 1) % 4 ===0) {
